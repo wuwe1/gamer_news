@@ -1,4 +1,6 @@
 import scrapy
+import time
+
 
 class GamerskySpider(scrapy.Spider):
     name = 'gamersky'
@@ -11,5 +13,7 @@ class GamerskySpider(scrapy.Spider):
             yield {
                 'title': article.css('div.img > a::attr(title)').get().strip(),
                 'excerpt': article.css('div.con > div.txt::text').get(),
-                'url': article.css('div.img > a::attr(href)').get()
+                'url': article.css('div.img > a::attr(href)').get(),
+                'source': 'gamersky',
+                'time': int(time.time())
             }

@@ -1,4 +1,6 @@
 import scrapy
+import time
+
 
 class NgaSpider(scrapy.Spider):
     name = 'nga'
@@ -11,5 +13,7 @@ class NgaSpider(scrapy.Spider):
             yield {
                 'title': article.css('div.txt > h2 > a::attr(title)').get().strip(),
                 'excerpt': article.css('div.txt > p::text').get(),
-                'url': article.css('div.txt > h2 > a::attr(href)').get()
+                'url': article.css('div.txt > h2 > a::attr(href)').get(),
+                'source': 'nga',
+                'time': int(time.time())
             }

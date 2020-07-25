@@ -1,4 +1,6 @@
 import scrapy
+import time
+
 
 class GcoresSpider(scrapy.Spider):
     name = 'gcores'
@@ -13,5 +15,7 @@ class GcoresSpider(scrapy.Spider):
             yield {
                 'title': article.css('div.am_card_inner > a > h3::text').get().strip(),
                 'excerpt': article.css('a.original_imgArea_cover > p::text').get(),
-                'url': url
+                'url': url,
+                'source': 'gcores',
+                'time': int(time.time())
             }

@@ -1,6 +1,8 @@
 import scrapy
+import time
 import json
 from scrapy.http import HtmlResponse
+
 
 class VgtimeSpider(scrapy.Spider):
     name = 'vgtime'
@@ -13,11 +15,12 @@ class VgtimeSpider(scrapy.Spider):
         data = data['data']
         res = HtmlResponse(url='vgtime', body=data, encoding='utf-8')
         for article in res.css('li'):
-            url  = article.css('div.info_box > a::attr(href)').get()
+            url = article.css('div.info_box > a::attr(href)').get()
             url = "www.vgtime.com" + url
             yield {
                 'title': article.css('div.info_box > a > h2::text').get().strip(),
                 'excerpt': article.css('div.info_box > p::text').get(),
-                'url': url
+                'url': url,
+                'source': 'vgtime',
+                'time': int(time.time())
             }
-

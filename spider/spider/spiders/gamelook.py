@@ -1,4 +1,6 @@
 import scrapy
+import time
+
 
 class GamelookSpider(scrapy.Spider):
     name = 'gamelook'
@@ -11,5 +13,7 @@ class GamelookSpider(scrapy.Spider):
             yield {
                 'title': article.css('div.item-content > h2 > a::attr(title)').get().strip(),
                 'excerpt': article.css('div.item-content > div.item-excerpt > p::text').get(),
-                'url': article.css('div.item-content > h2 > a::attr(href)').get()
+                'url': article.css('div.item-content > h2 > a::attr(href)').get(),
+                'source': 'gamelook',
+                'time': int(time.time())
             }

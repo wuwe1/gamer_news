@@ -1,4 +1,6 @@
 import scrapy
+import time
+
 
 class SfwSpider(scrapy.Spider):
     name = 'sfw'
@@ -11,5 +13,7 @@ class SfwSpider(scrapy.Spider):
             yield {
                 'title': article.css('div.title-new > div > a::text').get().strip(),
                 'excerpt': article.css('div.intros::text').get(),
-                'url': article.css('div.title-new > div > a::attr(href)').get()
+                'url': article.css('div.title-new > div > a::attr(href)').get(),
+                'source': 'sfw',
+                'time': int(time.time())
             }

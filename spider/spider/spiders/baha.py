@@ -1,4 +1,6 @@
 import scrapy
+import time
+
 
 class BahaSpider(scrapy.Spider):
     name = 'baha'
@@ -13,5 +15,7 @@ class BahaSpider(scrapy.Spider):
             yield {
                 'title': article.css('h1 > a::text').get().strip(),
                 'excerpt': article.css('p::text').get().strip(),
-                'url': url
+                'url': url,
+                'source': 'baha',
+                'time': int(time.time())
             }
