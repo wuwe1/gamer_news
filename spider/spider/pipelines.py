@@ -32,6 +32,15 @@ class JlWithEncodingPipeline:
         return item
 
         
+class ExcerptCleaningPipeline:
+    def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        excerpt = adapter.get('excerpt')
+        excerpt = excerpt.replace('\n','').replace('\t','').replace(' ','')
+        adapter['excerpt'] = excerpt
+        return item
+
+        
 class MongoPipeline:
 
     collection_name = 'game_news'

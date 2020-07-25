@@ -69,7 +69,8 @@ FEED_EXPORT_ENCODING = 'utf-8'
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'spider.pipelines.DropNoneURLPipeline': 1,
-   'spider.pipelines.MongoPipeline': 2,
+   'spider.pipelines.ExcerptCleaningPipeline': 2,
+   'spider.pipelines.MongoPipeline': 3,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

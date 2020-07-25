@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from .dbmodel import DBModelMixin
 from .rwmodel import RWModel
@@ -6,7 +6,7 @@ from .rwmodel import RWModel
 
 class News(RWModel):
     title: str
-    excerpt: str
+    excerpt: Optional[str]
     url: str
     source: str
     time: int
