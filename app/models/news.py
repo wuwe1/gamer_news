@@ -9,6 +9,7 @@ class News(RWModel):
     excerpt: Optional[str]
     url: str
     source: str
+    image: Optional[str]
     time: int
 
 

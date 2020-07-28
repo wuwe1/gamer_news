@@ -70,7 +70,8 @@ FEED_EXPORT_ENCODING = 'utf-8'
 ITEM_PIPELINES = {
    'spider.pipelines.DropNoneURLPipeline': 1,
    'spider.pipelines.ExcerptCleaningPipeline': 2,
-   'spider.pipelines.MongoPipeline': 3,
+   'spider.pipelines.JlWithEncodingPipeline': 3,
+   # 'spider.pipelines.MongoPipeline': 3,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

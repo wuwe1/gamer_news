@@ -14,6 +14,7 @@ class GamerskySpider(scrapy.Spider):
                 'title': article.css('div.img > a::attr(title)').get().strip(),
                 'excerpt': article.css('div.con > div.txt::text').get(),
                 'url': article.css('div.img > a::attr(href)').get(),
+                'image': article.css('div.img > a > img::attr(src)'),
                 'source': 'gamersky',
                 'time': int(time.time())
             }

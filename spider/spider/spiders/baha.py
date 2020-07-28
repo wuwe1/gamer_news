@@ -16,6 +16,7 @@ class BahaSpider(scrapy.Spider):
                 'title': article.css('h1 > a::text').get().strip(),
                 'excerpt': article.css('p::text').get().strip(),
                 'url': url,
+                'image': article.css('div.GN-lbox2E > a > img::attr(src)').get(),
                 'source': 'baha',
                 'time': int(time.time())
             }

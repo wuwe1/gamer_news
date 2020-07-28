@@ -22,5 +22,6 @@ class VgtimeSpider(scrapy.Spider):
                 'excerpt': article.css('div.info_box > p::text').get(),
                 'url': url,
                 'source': 'vgtime',
+                'image': article.css('img::attr(src)').get(),
                 'time': int(time.time())
             }
