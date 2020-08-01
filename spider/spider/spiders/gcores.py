@@ -24,5 +24,5 @@ class GcoresSpider(scrapy.Spider):
                 'url': url,
                 'image': image,
                 'source': 'gcores',
-                'time': int(time.time())
+                'time': int(time.time() * 1000)
             }

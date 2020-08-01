@@ -16,5 +16,5 @@ class GouhuoSpider(scrapy.Spider):
                 'url': article.css('div.we-figure-info > h3 > a::attr(href)').get(),
                 'source': 'gouhuo',
                 'image': article.css('div.we-imageBox > img::attr(src)').get(),
-                'time': int(time.time())
+                'time': int(time.time() * 1000)
             }

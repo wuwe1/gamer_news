@@ -18,5 +18,5 @@ class BahaSpider(scrapy.Spider):
                 'url': url,
                 'image': article.css('div.GN-lbox2E > a > img::attr(src)').get(),
                 'source': 'baha',
-                'time': int(time.time())
+                'time': int(time.time() * 1000)
             }

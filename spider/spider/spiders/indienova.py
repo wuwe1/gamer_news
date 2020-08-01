@@ -15,7 +15,7 @@ class IndienovaSpider(scrapy.Spider):
             relative_url = article.css(
                 'div.article-image > a::attr(href)').get()
             url = response.urljoin(relative_url)
-            image = article.css('div.article-image > a > img::attr(src)').get()
+            image = ''
             match = pattern.match(image)
             image = match.group(1)
 
@@ -25,5 +25,5 @@ class IndienovaSpider(scrapy.Spider):
                 'url': url,
                 'source': 'indienova',
                 'image': image,
-                'time': int(time.time())
+                'time': int(time.time() * 1000)
             }

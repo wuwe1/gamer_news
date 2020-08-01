@@ -23,5 +23,5 @@ class VgtimeSpider(scrapy.Spider):
                 'url': url,
                 'source': 'vgtime',
                 'image': article.css('img::attr(src)').get(),
-                'time': int(time.time())
+                'time': int(time.time() * 1000)
             }
