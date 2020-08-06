@@ -4,9 +4,9 @@ import requests
 
 
 class MpDatabase():
-    APPID = ""
-    APPSECRET = ""
-    ENV = ""
+    APPID = "wx9593ec8b1d4a3aed"
+    APPSECRET = "9b82d1fca468f281e06856ccaf3b2222"
+    ENV = "gamer-news-vmczg"
 
     def __init__(self):
         pass
@@ -42,26 +42,23 @@ class MpDatabase():
 
         url = f'https://api.weixin.qq.com/tcb/databaseadd?access_token={self.ACCESS_TOKEN}'
         
+        news = {"data": []}
         with open(file_path) as jl:
             lines = []
             for line in jl.readlines():
-                lines.append(line)
-            text = ','.join(lines)
+                news["data"].append(json.loads(line))
         
         query = '''
-        db.collection("news").add({
-            data: [
-                ''' + text + '''
-            ]
-        })
-        '''
+        db.collection("news")
+          .add({})
+        '''.format(news)
 
-        data = {
+        body = {
             "env": self.ENV,
             "query": query
         }
 
-        res = requests.post(url, data=json.dumps(data))
+        res = requests.post(url, data=json.dumps(body))
         j = self.process_json_response(res)
 
         return j

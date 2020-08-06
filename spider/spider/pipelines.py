@@ -58,6 +58,16 @@ class DropNoneURLandExistURLPipeline:
         return item
 
 
+class DataCleaningPipeline:
+    def process_item(self, item):
+        adapter = ItemAdapter(item)
+
+        adapter['title'] = adapter.get('title').replace('\n', '')
+        adapter['excerpt'] = adapter.get('excerpt').replace('\n', '')
+        image = adapter.get('image')
+        adapter['image'] = adapter.get('image') if adapter.get('image') is not None else ''
+
+
 class SetTagsPipeline:
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)

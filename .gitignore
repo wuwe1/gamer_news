@@ -5,6 +5,8 @@ __pycache__/
 
 .vscode/
 
+*.jl
+
 # C extensions
 *.so
 
