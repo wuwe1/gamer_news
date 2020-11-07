@@ -1,0 +1,12 @@
+name: Scrape latest data
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: 42 */4 * * *
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    
