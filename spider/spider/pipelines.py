@@ -70,6 +70,8 @@ class DataCleaningPipeline:
         excerpt = adapter.get('excerpt')
 
         adapter['title'] = title.replace('\n', '')
+        if not excerpt:
+            excerpt = ''
         adapter['excerpt'] = excerpt.replace('\n', '').replace('\t', '').replace(' ', '')
         image = adapter.get('image')
         adapter['image'] = image if image is not None else ''
