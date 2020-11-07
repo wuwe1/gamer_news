@@ -1,4 +1,4 @@
-## INTRO
+# gamer-news
 A game news aggregrator 
 
 Currently supported site:
@@ -17,7 +17,10 @@ Currently supported site:
 - spider
     - `pip install scrapy`
     - `cd spider`
-    - `scrapy list | xargs -n 1 scrapy crawl`
+    - `chmod +x spider/run_spider.sh`
+    - `./spider/run_spider.sh`
 
 - app
+    - `pip install uvicorn`
+    - `cd app`
     - `uvicorn app.main:app --reload`
