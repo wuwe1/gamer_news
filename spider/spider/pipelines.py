@@ -59,7 +59,7 @@ class DropNoneURLandExistURLPipeline:
 
 
 class DataCleaningPipeline:
-    def process_item(self, item):
+    def process_item(self, item, spider):
         adapter = ItemAdapter(item)
 
         adapter['title'] = adapter.get('title').replace('\n', '')
@@ -99,7 +99,7 @@ class JlWithEncodingPipeline:
         self.file.write(line)
         return item
 
-        
+
 class ExcerptCleaningPipeline:
     def process_item(self, item):
         adapter = ItemAdapter(item)
@@ -108,7 +108,7 @@ class ExcerptCleaningPipeline:
         adapter['excerpt'] = excerpt
         return item
 
-        
+
 class MongoPipeline:
 
     collection_name = 'game_news'
