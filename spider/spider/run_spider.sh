@@ -2,9 +2,9 @@ if [ -e items.jl ] ; then
     rm items.jl
 fi
 
-python -m scrapy list | xargs -n 1 scrapy crawl
+/root/miniconda3/bin/python -m scrapy list | xargs -n 1 scrapy crawl
 
-python ./add_to_mp_database.py
+/root/miniconda3/bin/python ./add_to_mp_database.py
 
 git config user.name "Automated"
 git config user.email "actions@users.noreply.github.com"
