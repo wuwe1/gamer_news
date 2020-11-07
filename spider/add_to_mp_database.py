@@ -8,7 +8,7 @@ load_dotenv(os.path.join(project_folder, '.env'))
 
 
 class MpDatabase():
-    # push items.jl to wechat mini program database
+    """push items.jl to wechat mini program database"""
     APPID = os.environ.get('WX_APPID')
     APPSECRET = os.environ.get('WX_APPSECRET')
     ENV = "gamer-news-vmczg"
