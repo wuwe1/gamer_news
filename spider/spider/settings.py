@@ -70,9 +70,8 @@ FEED_EXPORT_ENCODING = 'utf-8'
 ITEM_PIPELINES = {
     'spider.pipelines.DropNoneURLandExistURLPipeline': 1,
     'spider.pipelines.DataCleaningPipeline': 2,
-   # 'spider.pipelines.ExcerptCleaningPipeline': 3,
-   # 'spider.pipelines.SetTagsPipeline': 4,
-   # 'spider.pipelines.MongoPipeline': 5,
+    'spider.pipelines.SetTagsPipeline': 4,
+    'spider.pipelines.MongoPipeline': 5,
     'spider.pipelines.JlWithEncodingPipeline': 6
 }
 
