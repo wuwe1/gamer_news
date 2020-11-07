@@ -6,8 +6,8 @@ fi
 
 /root/miniconda3/bin/python ./add_to_mp_database.py
 
-git config user.name "Automated"
-git config user.email "actions@users.noreply.github.com"
+git config user.name "wuwe1"
+git config user.email "wu_we1@outlook.com"
 git add -A
 timestamp=$(date -u)
 git commit -m "Latest data: ${timestamp}" || exit 0
