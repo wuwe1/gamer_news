@@ -2,6 +2,8 @@ import os
 import json
 import requests
 
+# push items.jl to wechat mini program database
+
 
 class MpDatabase():
     APPID = os.environ.get('WX_APPID')
