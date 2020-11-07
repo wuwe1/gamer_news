@@ -65,7 +65,8 @@ class DataCleaningPipeline:
         adapter['title'] = adapter.get('title').replace('\n', '')
         adapter['excerpt'] = adapter.get('excerpt').replace('\n', '')
         image = adapter.get('image')
-        adapter['image'] = adapter.get('image') if adapter.get('image') is not None else ''
+        adapter['image'] = image if image is not None else ''
+        return item
 
 
 class SetTagsPipeline:
