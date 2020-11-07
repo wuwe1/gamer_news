@@ -4,6 +4,8 @@ fi
 
 scrapy list | xargs -n 1 scrapy crawl
 
+python ./add_to_mp_database.py
+
 git config user.name "Automated"
 git config user.email "actions@users.noreply.github.com"
 git add -A
