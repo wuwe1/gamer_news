@@ -1,6 +1,10 @@
 # gamer-news
 A game news aggregrator 
 
+github actions will run the scrapy script on `42 */4 * * *` (At minute 42 past every 4th hour)
+
+view the news on [git-history](https://github.githistory.xyz/wuwe1/gamer_news/blob/master/spider/items.jl)
+
 Currently supported site:
 - https://indienova.com/channel/news
 - https://www.gamersky.com/news/pc/zx/
