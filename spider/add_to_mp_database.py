@@ -4,8 +4,8 @@ import requests
 
 
 class MpDatabase():
-    APPID = "wx9593ec8b1d4a3aed"
-    APPSECRET = "9b82d1fca468f281e06856ccaf3b2222"
+    APPID = os.environ.get('WX_APPID')
+    APPSECRET = os.environ.get('WX_APPSECRET')
     ENV = "gamer-news-vmczg"
 
     def __init__(self):
