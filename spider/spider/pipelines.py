@@ -67,7 +67,7 @@ class DataCleaningPipeline:
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
         title = adapter.get('title')
-        excerpt = adapter.get('except')
+        excerpt = adapter.get('excerpt')
 
         adapter['title'] = title.replace('\n', '')
         adapter['excerpt'] = excerpt.replace('\n', '').replace('\t', '').replace(' ', '')
