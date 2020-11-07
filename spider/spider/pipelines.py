@@ -101,7 +101,7 @@ class JlWithEncodingPipeline:
 
         
 class ExcerptCleaningPipeline:
-    def process_item(self, item, spider):
+    def process_item(self, item):
         adapter = ItemAdapter(item)
         excerpt = adapter.get('excerpt')
         excerpt = excerpt.replace('\n','').replace('\t','').replace(' ','')
