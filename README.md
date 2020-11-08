@@ -1,5 +1,5 @@
 # gamer_news 🕹
-![scrape-workflow-badge](https://github.com/wuwe1/gamer_news/workflows/scrape/badge.svg)
+![scrape-workflow-badge](https://github.com/wuwe1/gamer_news/workflows/Scrape%20latest%20data/badge.svg)
 
 A game news aggregrator 
 
