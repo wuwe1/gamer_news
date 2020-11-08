@@ -1,7 +1,7 @@
-# gamer-news 🕹
-A game news aggregrator 
+# gamer_news 🕹
+[scrape-workflow-badge](https://github.com/wuwe1/gamer_news/workflows/scrape/badge.svg)
 
-github actions will run the scrapy script on `42 */4 * * *` (At minute 42 past every 4th hour)
+A game news aggregrator 
 
 view the news on [git-history](https://github.githistory.xyz/wuwe1/gamer_news/blob/master/spider/items.jl)
 
@@ -16,6 +16,14 @@ Currently supported site:
 - http://nga.cn/v/games/
 - https://www.vgtime.com/topic/index.jhtml
 - http://www.ign.xn--fiqs8s/ 
+
+## How it works
+`spider/` directory holds a scrapy script will extract the news on the sites above
+
+`app/` directory holds a RESTful api for the news
+
+github actions will run the scrapy script on `42 */4 * * *` (At minute 42 past every 4th hour)
+
 
 ## USAGE
 - spider
