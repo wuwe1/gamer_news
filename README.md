@@ -1,15 +1,15 @@
-# gamer_news 🕹
+# gamer_news 🎮
 ![scrape-workflow-badge](https://github.com/wuwe1/gamer_news/workflows/Scrape%20latest%20data/badge.svg)
 
 A game news aggregrator 
 
 ![wx mini program](https://tva1.sinaimg.cn/large/0081Kckwly1gkhsg9hmucj3076076wff.jpg)
 
-scan the qr code the to the wechat miniprogram
+👆 scan the qr code the to the wechat miniprogram
 
-view the news on [git-history](https://github.githistory.xyz/wuwe1/gamer_news/blob/master/spider/items.jl)
+👀 view the news on [git-history](https://github.githistory.xyz/wuwe1/gamer_news/blob/master/spider/items.jl)
 
-Currently supported site:
+📜 Currently supported site:
 - https://indienova.com/channel/news
 - https://www.gamersky.com/news/pc/zx/
 - https://www.gcores.com/news
