@@ -3,6 +3,10 @@
 
 A game news aggregrator 
 
+![wx mini program](https://tva1.sinaimg.cn/large/0081Kckwly1gkhse4cd5dj30by0bydht.jpg)
+
+scan the qr code the to the wechat miniprogram
+
 view the news on [git-history](https://github.githistory.xyz/wuwe1/gamer_news/blob/master/spider/items.jl)
 
 Currently supported site:
