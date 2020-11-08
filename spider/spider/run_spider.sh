@@ -6,6 +6,8 @@ fi
 
 /root/miniconda3/bin/python ./add_to_mp_database.py
 
+git pull
+
 git config user.name "wuwe1"
 git config user.email "wu_we1@outlook.com"
 git add -A
