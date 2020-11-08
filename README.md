@@ -3,7 +3,7 @@
 
 A game news aggregrator 
 
-![wx mini program](https://tva1.sinaimg.cn/large/0081Kckwly1gkhse4cd5dj30by0bydht.jpg)
+![wx mini program](https://tva1.sinaimg.cn/large/0081Kckwly1gkhsg9hmucj3076076wff.jpg)
 
 scan the qr code the to the wechat miniprogram
 
