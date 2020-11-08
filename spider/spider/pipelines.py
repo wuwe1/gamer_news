@@ -25,6 +25,7 @@ stopwords = [
 
 
 class DropNoneURLandExistURLPipeline:
+    '''Drop item without url or existing in database'''
 
     collection_name = 'game_news'
 
@@ -59,17 +60,26 @@ class DropNoneURLandExistURLPipeline:
 
 
 class DataCleaningPipeline:
+    '''
+    replace space character in title and excerpt
+    replace image: null with image: ""
+    '''
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
+        title = adapter.get('title')
+        excerpt = adapter.get('excerpt')
 
-        adapter['title'] = adapter.get('title').replace('\n', '')
-        adapter['excerpt'] = adapter.get('excerpt').replace('\n', '')
+        adapter['title'] = title.replace('\n', '')
+        if not excerpt:
+            excerpt = ''
+        adapter['excerpt'] = excerpt.replace('\n', '').replace('\t', '').replace(' ', '')
         image = adapter.get('image')
         adapter['image'] = image if image is not None else ''
         return item
 
 
 class SetTagsPipeline:
+    '''get tag of news title'''
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
 
@@ -88,6 +98,7 @@ class SetTagsPipeline:
 
 
 class JlWithEncodingPipeline:
+    '''write into items.jl'''
     def open_spider(self, spider):
         self.file = open('items.jl', 'a', encoding='utf-8')
 
@@ -101,17 +112,8 @@ class JlWithEncodingPipeline:
         return item
 
 
-class ExcerptCleaningPipeline:
-    def process_item(self, item):
-        adapter = ItemAdapter(item)
-        excerpt = adapter.get('excerpt')
-        excerpt = excerpt.replace('\n','').replace('\t','').replace(' ','')
-        adapter['excerpt'] = excerpt
-        return item
-
-
 class MongoPipeline:
-
+    '''write into database'''
     collection_name = 'game_news'
 
     def __init__(self, mongo_uri, mongo_db):

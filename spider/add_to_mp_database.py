@@ -1,11 +1,16 @@
 import os
 import json
 import requests
+from dotenv import load_dotenv
+
+project_folder = os.path.expanduser('~/gamer_news')
+load_dotenv(os.path.join(project_folder, '.env'))
 
 
 class MpDatabase():
-    APPID = "wx9593ec8b1d4a3aed"
-    APPSECRET = "9b82d1fca468f281e06856ccaf3b2222"
+    """push items.jl to wechat mini program database"""
+    APPID = os.environ.get('WX_APPID')
+    APPSECRET = os.environ.get('WX_APPSECRET')
     ENV = "gamer-news-vmczg"
 
     def __init__(self):
